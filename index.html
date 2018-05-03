@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Todo Management</title> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/style.css">  
+</head>
+
+<body>
+  <html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="//use.edgefonts.net/vast-shadow:n4:all.js"></script>
+    <script src="//use.edgefonts.net/vast-shadow:n4:all;megrim.js"></script>
+  </head>
+  <body>
+  <div class="container" style="margin-left: 155px;width: 80%;  background-color: white;">
+    <div class="todo-wrapper" ng-controller="TodoCtrl" style="padding-bottom: 10px;">
+     <form>
+       <div class="modal-header"  style="height: 50px;margin:0px;text-align: center;padding-top:3px;padding-bottom:3px;background-color:grey; ">
+           <h5 class="modal-title"  style="height: 33px;margin: 12px;padding-top:3px;font-size: 23px;font-family: megrim, fantasy;"> <span>To DO - Create/Delete/List</span> </h5>
+        </div>
+           <button style="border-radius: 25px;"  ng-click="checkAll()"><h5 class="modal-title"  style="height: 30px;margin:0px;padding-top:3px;font-size: 23px;">Select All</h5></button> <br><br>      
+        <ul>
+        <li ng-repeat="todo in todos">
+          <input type="checkbox" ng-model="todo.done"/>
+          <span >{{todo.titletext}}</span>
+        </li>
+        </ul>
+         <input class="add-input" placeholder="Enter to do here..." type="text" ng-model="formTodoText" ng-model-instant />
+        <button  class="add-btn" ng-click="addTodo()"><h3>Add Todo</h3></button>
+      <button  class="add-btn" ng-click="clearCompleted()"><h3>Delete Todo</h3></button>
+      </form>
+  
+    </div>
+  </div>
+
+  </body>
+  
+</html>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js'></script>
+  <script  src="js/index.js"></script>
+
+
+
+
+
+</body>
+
+</html>
